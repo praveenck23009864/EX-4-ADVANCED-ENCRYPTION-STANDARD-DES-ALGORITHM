@@ -9,50 +9,47 @@
   3. It has a fixed block size of 128 bits, and a key size of 128, 192, or 256 bits. 
   4. AES operates on a 4 × 4 column-major order array of bytes, termed the state
 
-## PROGRAM:
+## PROGRAM: 
 ```
+Name: Aadhithya M
+Register Number: 212222100001
+```
+
+```C
 #include <stdio.h>
 #include <string.h>
 
-// Basic XOR Encryption
-void encrypt(char *message, char *key, char *encrypted) {
-    int messageLen = strlen(message);
-    int keyLen = strlen(key);
-    for (int i = 0; i < messageLen; i++) {
-        encrypted[i] = message[i] ^ key[i % keyLen];  // XOR with the key
-    }
-    encrypted[messageLen] = '\0';  // Null-terminate the encrypted message
-}
 
-// Basic XOR Decryption (same as encryption in this case)
-void decrypt(char *encrypted, char *key, char *decrypted) {
-    int encryptedLen = strlen(encrypted);
-    int keyLen = strlen(key);
-    for (int i = 0; i < encryptedLen; i++) {
-        decrypted[i] = encrypted[i] ^ key[i % keyLen];  // XOR again with the same key
-    }
-    decrypted[encryptedLen] = '\0';  // Null-terminate the decrypted message
+  void xor_encrypt_decrypt(char *input, char *key) {
+int input_len = strlen(input);
+int key_len = strlen(key);
+
+for (int i = 0; i < input_len; i++) {
+    input[i] = input[i] ^ key[i % key_len]; // XOR encryption
+}
 }
 
 int main() {
-    char message[] = "Hello, DES!";
-    char key[] = "mykey123";  // Example key
-    char encrypted[100], decrypted[100];
+char url[] = "https://lms2.cse.saveetha.in";
+char key[] = "secretkey"; // Simple key for XOR encryption
 
-    // Encrypt the message
-    encrypt(message, key, encrypted);
-    printf("Encrypted Message: %s\n", encrypted);
+printf("Original URL: %s\n", url);
 
-    // Decrypt the message
-    decrypt(encrypted, key, decrypted);
-    printf("Decrypted Message: %s\n", decrypted);
+// Encrypt the URL
+xor_encrypt_decrypt(url, key);
+printf("Encrypted URL: %s\n", url);
 
-    return 0;
+// Decrypt the URL (since XOR is reversible using the same key)
+xor_encrypt_decrypt(url, key);
+printf("Decrypted URL: %s\n", url);
+
+return 0;
 }
 ```
 ## OUTPUT:
 
-![Screenshot 2024-09-30 104859](https://github.com/user-attachments/assets/86471031-7f5d-4d66-b433-0aac9dd9a741)
+![Screenshot 2024-09-30 082214](https://github.com/user-attachments/assets/2417d87e-f3d4-4ba4-9d1e-d6289f46f045)
 
-## RESULT:
-Thus, AES encryption and decryption were implemented correctly using the provided key and initialization vector (IV).
+## RESULT: 
+
+Hence,to use Advanced Encryption Standard (AES) Algorithm for a practical application like URL Encryption is done successfully.
