@@ -11,8 +11,8 @@
 
 ## PROGRAM: 
 ```
-Name: Aadhithya M
-Register Number: 212222100001
+Name: praveen ck
+Register Number: 212222243003
 ```
 
 ```C
